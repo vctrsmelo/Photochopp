@@ -7,25 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE01F544214439600021B8CD /* SelectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE01F543214439600021B8CD /* SelectImageViewController.swift */; };
 		EE16742B214318EC00AEB78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16742A214318EC00AEB78C /* AppDelegate.swift */; };
-		EE16742D214318EC00AEB78C /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16742C214318EC00AEB78C /* FlipViewController.swift */; };
+		EE16742D214318EC00AEB78C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16742C214318EC00AEB78C /* MainViewController.swift */; };
 		EE167430214318EC00AEB78C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE16742E214318EC00AEB78C /* Main.storyboard */; };
-		EE167432214318F000AEB78C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE167431214318F000AEB78C /* Assets.xcassets */; };
 		EE167435214318F000AEB78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE167433214318F000AEB78C /* LaunchScreen.storyboard */; };
+		EE1E8E1C2145C6F900ABC5BF /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E8E1B2145C6F900ABC5BF /* UIImage+Extensions.swift */; };
+		EE1E8E1E2145C9B600ABC5BF /* GreyQuantizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1E8E1D2145C9B600ABC5BF /* GreyQuantizationView.swift */; };
+		EE3F587121445967006FADD8 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F587021445967006FADD8 /* FlipView.swift */; };
+		EE3F587321445998006FADD8 /* FlipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3F587221445998006FADD8 /* FlipView.xib */; };
+		EE3F5876214466DF006FADD8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F5875214466DF006FADD8 /* Filter.swift */; };
+		EE3F587821446717006FADD8 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F587721446717006FADD8 /* Filters.swift */; };
+		EE3F587F21447D80006FADD8 /* ColorModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F587E21447D80006FADD8 /* ColorModuleView.swift */; };
+		EE3F588321448427006FADD8 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F588221448427006FADD8 /* UIColor+Extensions.swift */; };
 		EE4D265821432834006ADF68 /* RGBAPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D265721432834006ADF68 /* RGBAPixel.swift */; };
 		EE4D265A21432867006ADF68 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D265921432867006ADF68 /* Image.swift */; };
+		EEDE2DFD21459CC90073798C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDE2DFC21459CC90073798C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE01F543214439600021B8CD /* SelectImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageViewController.swift; sourceTree = "<group>"; };
 		EE167427214318EC00AEB78C /* Photo Chopp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Chopp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE16742A214318EC00AEB78C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE16742C214318EC00AEB78C /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
+		EE16742C214318EC00AEB78C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EE16742F214318EC00AEB78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE167431214318F000AEB78C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE167434214318F000AEB78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE167436214318F000AEB78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE1E8E1B2145C6F900ABC5BF /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		EE1E8E1D2145C9B600ABC5BF /* GreyQuantizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyQuantizationView.swift; sourceTree = "<group>"; };
+		EE3F587021445967006FADD8 /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
+		EE3F587221445998006FADD8 /* FlipView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipView.xib; sourceTree = "<group>"; };
+		EE3F5875214466DF006FADD8 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		EE3F587721446717006FADD8 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		EE3F587E21447D80006FADD8 /* ColorModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModuleView.swift; sourceTree = "<group>"; };
+		EE3F588221448427006FADD8 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EE4D265721432834006ADF68 /* RGBAPixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBAPixel.swift; sourceTree = "<group>"; };
 		EE4D265921432867006ADF68 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		EEDE2DFC21459CC90073798C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,27 +77,20 @@
 			isa = PBXGroup;
 			children = (
 				EE16742A214318EC00AEB78C /* AppDelegate.swift */,
+				EE3F588121448415006FADD8 /* Extensions */,
+				EE53AE5B2144301F00A0EFEB /* Model */,
+				EE3F5874214466B1006FADD8 /* View */,
 				EE16743F21431BC000AEB78C /* Storyboard */,
-				EE16743C21431B8D00AEB78C /* Flows */,
 				EE16743E21431B9800AEB78C /* Supporting Files */,
-				EE4D265721432834006ADF68 /* RGBAPixel.swift */,
-				EE4D265921432867006ADF68 /* Image.swift */,
 			);
 			path = "Photo Chopp";
-			sourceTree = "<group>";
-		};
-		EE16743C21431B8D00AEB78C /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				EE16743D21431B9100AEB78C /* Flip */,
-			);
-			path = Flows;
 			sourceTree = "<group>";
 		};
 		EE16743D21431B9100AEB78C /* Flip */ = {
 			isa = PBXGroup;
 			children = (
-				EE16742C214318EC00AEB78C /* FlipViewController.swift */,
+				EE3F587021445967006FADD8 /* FlipView.swift */,
+				EE3F587221445998006FADD8 /* FlipView.xib */,
 			);
 			path = Flip;
 			sourceTree = "<group>";
@@ -87,7 +98,7 @@
 		EE16743E21431B9800AEB78C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EE167431214318F000AEB78C /* Assets.xcassets */,
+				EEDE2DFC21459CC90073798C /* Assets.xcassets */,
 				EE167436214318F000AEB78C /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -100,6 +111,54 @@
 				EE167433214318F000AEB78C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		EE3F5874214466B1006FADD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE01F543214439600021B8CD /* SelectImageViewController.swift */,
+				EE16742C214318EC00AEB78C /* MainViewController.swift */,
+				EE3F588021447DFB006FADD8 /* Modules */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE3F587B21447BCE006FADD8 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F587E21447D80006FADD8 /* ColorModuleView.swift */,
+				EE1E8E1D2145C9B600ABC5BF /* GreyQuantizationView.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		EE3F588021447DFB006FADD8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F587B21447BCE006FADD8 /* Color */,
+				EE16743D21431B9100AEB78C /* Flip */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EE3F588121448415006FADD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F588221448427006FADD8 /* UIColor+Extensions.swift */,
+				EE1E8E1B2145C6F900ABC5BF /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE53AE5B2144301F00A0EFEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D265721432834006ADF68 /* RGBAPixel.swift */,
+				EE4D265921432867006ADF68 /* Image.swift */,
+				EE3F5875214466DF006FADD8 /* Filter.swift */,
+				EE3F587721446717006FADD8 /* Filters.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE167435214318F000AEB78C /* LaunchScreen.storyboard in Resources */,
-				EE167432214318F000AEB78C /* Assets.xcassets in Resources */,
 				EE167430214318EC00AEB78C /* Main.storyboard in Resources */,
+				EEDE2DFD21459CC90073798C /* Assets.xcassets in Resources */,
+				EE3F587321445998006FADD8 /* FlipView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,9 +233,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3F587F21447D80006FADD8 /* ColorModuleView.swift in Sources */,
+				EE3F5876214466DF006FADD8 /* Filter.swift in Sources */,
+				EE1E8E1C2145C6F900ABC5BF /* UIImage+Extensions.swift in Sources */,
+				EE1E8E1E2145C9B600ABC5BF /* GreyQuantizationView.swift in Sources */,
+				EE3F587821446717006FADD8 /* Filters.swift in Sources */,
+				EE3F587121445967006FADD8 /* FlipView.swift in Sources */,
 				EE4D265821432834006ADF68 /* RGBAPixel.swift in Sources */,
+				EE01F544214439600021B8CD /* SelectImageViewController.swift in Sources */,
 				EE4D265A21432867006ADF68 /* Image.swift in Sources */,
-				EE16742D214318EC00AEB78C /* FlipViewController.swift in Sources */,
+				EE3F588321448427006FADD8 /* UIColor+Extensions.swift in Sources */,
+				EE16742D214318EC00AEB78C /* MainViewController.swift in Sources */,
 				EE16742B214318EC00AEB78C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
