@@ -1,5 +1,15 @@
-//import Cocoa
-//
+import Cocoa
+
+extension NSImage {
+    func resize(to size: NSSize) -> NSImage {
+        return NSImage(size: size, flipped: false, drawingHandler: {
+            self.draw(in: $0)
+            return true
+        })
+    }
+}
+
+
 //extension NSImage {
 //
 //    func fixedOrientation() -> NSImage? {

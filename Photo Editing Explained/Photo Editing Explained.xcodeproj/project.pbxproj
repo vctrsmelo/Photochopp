@@ -12,13 +12,23 @@
 		EE3F2CE5214F09C1005A1099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3F2CE4214F09C1005A1099 /* Assets.xcassets */; };
 		EE3F2CE8214F09C1005A1099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3F2CE6214F09C1005A1099 /* Main.storyboard */; };
 		EE3F2CF4214F09C1005A1099 /* Photo_Editing_ExplainedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2CF3214F09C1005A1099 /* Photo_Editing_ExplainedTests.swift */; };
-		EE3F2D09214F0E4E005A1099 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D02214F0E4D005A1099 /* UIColor+Extensions.swift */; };
-		EE3F2D0A214F0E4E005A1099 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D03214F0E4D005A1099 /* UIImage+Extensions.swift */; };
+		EE3F2D09214F0E4E005A1099 /* NSColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D02214F0E4D005A1099 /* NSColor+Extensions.swift */; };
+		EE3F2D0A214F0E4E005A1099 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D03214F0E4D005A1099 /* NSImage+Extensions.swift */; };
 		EE3F2D0B214F0E4E005A1099 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D05214F0E4D005A1099 /* Image.swift */; };
 		EE3F2D0C214F0E4E005A1099 /* RGBAPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D06214F0E4D005A1099 /* RGBAPixel.swift */; };
 		EE3F2D0D214F0E4E005A1099 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D07214F0E4D005A1099 /* Filter.swift */; };
 		EE3F2D0E214F0E4E005A1099 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D08214F0E4D005A1099 /* Filters.swift */; };
 		EE3F2D10214F21BD005A1099 /* EditableImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F2D0F214F21BD005A1099 /* EditableImages.swift */; };
+		EE9EABEE21595242004DB243 /* GLKMatrix3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9EABED21595242004DB243 /* GLKMatrix3+Extensions.swift */; };
+		EEC93ADC2160139200B318A8 /* HistogramOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADB2160139200B318A8 /* HistogramOperation.swift */; };
+		EEC93ADE216015BC00B318A8 /* Histogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADD216015BC00B318A8 /* Histogram.swift */; };
+		EEC93AE0216130B500B318A8 /* RGBFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADF216130B500B318A8 /* RGBFunctions.swift */; };
+		EEC93AE2216131E100B318A8 /* LABPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93AE1216131E100B318A8 /* LABPixel.swift */; };
+		EEC93AE621615C0A00B318A8 /* RGBLABFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */; };
+		EEC949D6215821B5004B694C /* NSImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC949D5215821B5004B694C /* NSImageView+Extensions.swift */; };
+		EEE3D838215837AB0097414E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9A323D215837100027E6D6 /* Charts.framework */; };
+		EEE3D83C2158424E0097414E /* HistogramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3D83B2158424E0097414E /* HistogramViewController.swift */; };
+		EEE3D83F21584DD40097414E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3D83E21584DD40097414E /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +52,23 @@
 		EE3F2CEF214F09C1005A1099 /* Photo Editing ExplainedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Editing ExplainedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3F2CF3214F09C1005A1099 /* Photo_Editing_ExplainedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Editing_ExplainedTests.swift; sourceTree = "<group>"; };
 		EE3F2CF5214F09C1005A1099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE3F2D02214F0E4D005A1099 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		EE3F2D03214F0E4D005A1099 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		EE3F2D02214F0E4D005A1099 /* NSColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Extensions.swift"; sourceTree = "<group>"; };
+		EE3F2D03214F0E4D005A1099 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		EE3F2D05214F0E4D005A1099 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		EE3F2D06214F0E4D005A1099 /* RGBAPixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAPixel.swift; sourceTree = "<group>"; };
 		EE3F2D07214F0E4D005A1099 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		EE3F2D08214F0E4D005A1099 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		EE3F2D0F214F21BD005A1099 /* EditableImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableImages.swift; sourceTree = "<group>"; };
+		EE9A323D215837100027E6D6 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/Mac/Charts.framework; sourceTree = "<group>"; };
+		EE9EABED21595242004DB243 /* GLKMatrix3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLKMatrix3+Extensions.swift"; sourceTree = "<group>"; };
+		EEC93ADB2160139200B318A8 /* HistogramOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramOperation.swift; sourceTree = "<group>"; };
+		EEC93ADD216015BC00B318A8 /* Histogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histogram.swift; sourceTree = "<group>"; };
+		EEC93ADF216130B500B318A8 /* RGBFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBFunctions.swift; sourceTree = "<group>"; };
+		EEC93AE1216131E100B318A8 /* LABPixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LABPixel.swift; sourceTree = "<group>"; };
+		EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLABFunctions.swift; sourceTree = "<group>"; };
+		EEC949D5215821B5004B694C /* NSImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+Extensions.swift"; sourceTree = "<group>"; };
+		EEE3D83B2158424E0097414E /* HistogramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramViewController.swift; sourceTree = "<group>"; };
+		EEE3D83E21584DD40097414E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE3D838215837AB0097414E /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +96,7 @@
 				EE3F2CDF214F09BF005A1099 /* Photo Editing Explained */,
 				EE3F2CF2214F09C1005A1099 /* Photo Editing ExplainedTests */,
 				EE3F2CDE214F09BF005A1099 /* Products */,
+				EE9A323C215837100027E6D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +136,7 @@
 			children = (
 				EE3F2CE2214F09BF005A1099 /* ViewController.swift */,
 				EE3F2CE6214F09C1005A1099 /* Main.storyboard */,
+				EEE3D83B2158424E0097414E /* HistogramViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,8 +153,11 @@
 		EE3F2D01214F0E4D005A1099 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EE3F2D02214F0E4D005A1099 /* UIColor+Extensions.swift */,
-				EE3F2D03214F0E4D005A1099 /* UIImage+Extensions.swift */,
+				EE3F2D02214F0E4D005A1099 /* NSColor+Extensions.swift */,
+				EE3F2D03214F0E4D005A1099 /* NSImage+Extensions.swift */,
+				EEC949D5215821B5004B694C /* NSImageView+Extensions.swift */,
+				EEE3D83E21584DD40097414E /* Array+Extensions.swift */,
+				EE9EABED21595242004DB243 /* GLKMatrix3+Extensions.swift */,
 			);
 			name = Extensions;
 			path = "../../Photo Chopp/Photo Chopp/Extensions";
@@ -142,12 +168,25 @@
 			children = (
 				EE3F2D05214F0E4D005A1099 /* Image.swift */,
 				EE3F2D06214F0E4D005A1099 /* RGBAPixel.swift */,
+				EEC93AE1216131E100B318A8 /* LABPixel.swift */,
 				EE3F2D07214F0E4D005A1099 /* Filter.swift */,
 				EE3F2D08214F0E4D005A1099 /* Filters.swift */,
 				EE3F2D0F214F21BD005A1099 /* EditableImages.swift */,
+				EEC93ADB2160139200B318A8 /* HistogramOperation.swift */,
+				EEC93ADD216015BC00B318A8 /* Histogram.swift */,
+				EEC93ADF216130B500B318A8 /* RGBFunctions.swift */,
+				EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */,
 			);
 			name = Model;
 			path = "../../Photo Chopp/Photo Chopp/Model";
+			sourceTree = "<group>";
+		};
+		EE9A323C215837100027E6D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE9A323D215837100027E6D6 /* Charts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +199,7 @@
 				EE3F2CD9214F09BF005A1099 /* Sources */,
 				EE3F2CDA214F09BF005A1099 /* Frameworks */,
 				EE3F2CDB214F09BF005A1099 /* Resources */,
+				EEE3D839215837B10097414E /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -245,19 +285,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EEE3D839215837B10097414E /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Charts.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EE3F2CD9214F09BF005A1099 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EE3F2D0D214F0E4E005A1099 /* Filter.swift in Sources */,
+				EEC93AE0216130B500B318A8 /* RGBFunctions.swift in Sources */,
+				EEC93AE2216131E100B318A8 /* LABPixel.swift in Sources */,
+				EEE3D83C2158424E0097414E /* HistogramViewController.swift in Sources */,
 				EE3F2D10214F21BD005A1099 /* EditableImages.swift in Sources */,
 				EE3F2D0E214F0E4E005A1099 /* Filters.swift in Sources */,
 				EE3F2D0C214F0E4E005A1099 /* RGBAPixel.swift in Sources */,
 				EE3F2CE3214F09BF005A1099 /* ViewController.swift in Sources */,
-				EE3F2D09214F0E4E005A1099 /* UIColor+Extensions.swift in Sources */,
+				EEC93ADE216015BC00B318A8 /* Histogram.swift in Sources */,
+				EEC93AE621615C0A00B318A8 /* RGBLABFunctions.swift in Sources */,
+				EEC949D6215821B5004B694C /* NSImageView+Extensions.swift in Sources */,
+				EEE3D83F21584DD40097414E /* Array+Extensions.swift in Sources */,
+				EE3F2D09214F0E4E005A1099 /* NSColor+Extensions.swift in Sources */,
+				EE9EABEE21595242004DB243 /* GLKMatrix3+Extensions.swift in Sources */,
 				EE3F2CE1214F09BF005A1099 /* AppDelegate.swift in Sources */,
-				EE3F2D0A214F0E4E005A1099 /* UIImage+Extensions.swift in Sources */,
+				EE3F2D0A214F0E4E005A1099 /* NSImage+Extensions.swift in Sources */,
+				EEC93ADC2160139200B318A8 /* HistogramOperation.swift in Sources */,
 				EE3F2D0B214F0E4E005A1099 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +484,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Photo Editing Explained/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +506,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Photo Editing Explained/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

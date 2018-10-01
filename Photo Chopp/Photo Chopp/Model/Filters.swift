@@ -1,4 +1,5 @@
 import Foundation
+import GLKit
 
 class ScaleIntensityFilter: Filter {
     let scale: Double
@@ -140,5 +141,140 @@ class GreyQuantizationFilter: Filter {
         return grayInput.transformPixels({ (p) -> RGBAPixel in
             return p.findClosestMatch(palette: usedPalette)
         })
+    }
+}
+
+class BrightnessFilter: Filter {
+    var value: Int16
+    
+    init(value: Int16) {
+        self.value = value
+    }
+    
+    func apply(input: Image) -> Image {
+        let newImage = Image(width: input.width, height: input.height)
+        for y in 0 ..< input.height {
+            for x in 0 ..< input.width {
+                let p1 = input.getPixel(x: x, y: y)
+                
+                
+                var newRed: Int = Int(p1.red)+Int(value)
+                if !(0...255).contains(newRed) {
+                    newRed = (newRed < 0) ? 0 : 255
+                }
+                
+                var newGreen: Int = Int(p1.green)+Int(value)
+                if !(0...255).contains(newGreen) {
+                    newGreen = (newGreen < 0) ? 0 : 255
+                }
+                
+                var newBlue: Int = Int(p1.blue)+Int(value)
+                if !(0...255).contains(newBlue) {
+                    newBlue = (newBlue < 0) ? 0 : 255
+                }
+                
+                let newPixel = RGBAPixel(red: UInt8(newRed), green: UInt8(newGreen), blue: UInt8(newBlue))
+                newImage.setPixel(newPixel, x: x, y: y)
+            }
+        }
+        return newImage
+        
+    }
+}
+
+class GaussianFilter: Filter {
+    var kernel = GLKMatrix3(m: (0.0625,0.125,0.0625,0.125,0.25,0.125,0.0625,0.125,0.0625))
+    
+    func apply(input: Image) -> Image {
+        
+        return input.applyConvolution(kernel: kernel)
+    }
+}
+
+class ConstrastFilter: Filter {
+    var scale: Double
+    
+    init(scale: Double) {
+        if scale < 0 {
+            self.scale = 0
+            
+        } else if scale > 255 {
+            self.scale = 255
+            
+        } else {
+            self.scale = scale
+        }
+    }
+    
+    func apply(input: Image) -> Image {
+        return input.transformPixels({ (p1) -> RGBAPixel in
+            var p = p1
+            
+            var newRed = Double(p.red)*self.scale
+            newRed = newRed > 255 ? 255 : newRed
+            
+            var newGreen = Double(p.green)*self.scale
+            newGreen = newGreen > 255 ? 255 : newGreen
+            
+            var newBlue = Double(p.blue)*self.scale
+            newBlue = newBlue > 255 ? 255 : newBlue
+            
+            p.red = UInt8(newRed)
+            p.green = UInt8(newGreen)
+            p.blue = UInt8(newBlue)
+            return p
+        })
+    }
+}
+
+class EqualizeFilter: Filter {
+    func apply(input: Image) -> Image {
+        if input.isGreyScale {
+            return input.greyscaleEqualized()
+        } else {
+            return input.coloredEqualized()
+        }
+    }
+}
+
+class HistogramMatchMonoFilter: Filter {
+    
+    private let matchHistogram: Histogram
+    
+    init(matchGreyscaleHistogram: Histogram) {
+        self.matchHistogram = matchGreyscaleHistogram
+    }
+    
+    func apply(input: Image) -> Image {
+    
+        let histSrc = input.greyscaleHistogram
+        let histTarget = matchHistogram
+        let histSrcCum = histSrc.getCumulativeHistogram().normalized()
+        let histTargetCum = histTarget.getCumulativeHistogram().normalized()
+        
+        var hm = [Int](repeating: 0, count: 256)
+        
+        for i in 0 ... 255 {
+            var closestIndex = 128
+            for j in 0 ... 255 {
+                if abs(histSrcCum.values[i] - histTargetCum.values[j]) < abs(histSrcCum.values[i] - histTargetCum.values[closestIndex]) {
+                    closestIndex = j
+                }
+            }
+            hm[i] = closestIndex
+        }
+        
+        let newImage = Image(width: input.width, height: input.height)
+        
+        for x in 0 ..< input.width {
+            for y in 0 ..< input.height {
+                let originalGrey = input.getPixel(x: x, y: y).greyScale
+                let newGray = hm[Int(originalGrey)]
+                let newPixel = RGBAPixel(gray: UInt8(truncatingIfNeeded: newGray))
+                newImage.setPixel(newPixel, x: x, y: y)
+            }
+        }
+        
+        return newImage
     }
 }

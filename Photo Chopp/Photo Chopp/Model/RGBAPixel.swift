@@ -1,28 +1,10 @@
 import Cocoa
+import GLKit
 
+/* A 32 bits length data representing a pixel.
+ raw: 0xaabbggrr, where aa = 1 byte of alpha, bb = 1 byte of blue, gg = 1 byte of green and rr = 1 byte of red.
+*/
 public struct RGBAPixel {
-    
-    public init(rawVal: UInt32) {
-        raw = rawVal
-    }
-    
-    public init(red: UInt8, green: UInt8, blue: UInt8) {
-        raw = 0xFF000000 | UInt32(red) | UInt32(green) << 8 | UInt32(blue) << 16
-        
-    }
-    
-    public init(gray: UInt8) {
-        raw = 0xFF000000 | UInt32(gray) | UInt32(gray) << 8 | UInt32(gray) << 16
-    }
-    
-    public init(color: NSColor) {
-        let components = color.cgColor.components!
-        let red = components[0]
-        let green = components[1]
-        let blue = components[2]
-        
-        raw = 0xFF000000 | UInt32(red) | UInt32(green) << 8 | UInt32(blue) << 16
-    }
     
     public var raw: UInt32
     
@@ -57,6 +39,38 @@ public struct RGBAPixel {
     
     public var isGrey: Bool {
         return (red == green && green == blue)
+    }
+    
+    public init(rawVal: UInt32) {
+        raw = rawVal
+    }
+    
+    public init(red: UInt8, green: UInt8, blue: UInt8) {
+        raw = 0xFF000000 | UInt32(red) | UInt32(green) << 8 | UInt32(blue) << 16
+        
+    }
+    
+    public init(gray: UInt8) {
+        raw = 0xFF000000 | UInt32(gray) | UInt32(gray) << 8 | UInt32(gray) << 16
+    }
+    
+    public init(color: NSColor) {
+        
+        let components = color.cgColor.components!
+        let red = components[0]
+        let green = components[1]
+        let blue = components[2]
+        
+        raw = 0xFF000000 | UInt32(red) | UInt32(green) << 8 | UInt32(blue) << 16
+    }
+    
+    public init(lab: LABPixel) {
+        let rgb = lab_to_rgb(l: lab.l, a: lab.a, b: lab.b)
+        
+        let red = UInt8(truncatingIfNeeded: Int(rgb.red))
+        let green = UInt8(truncatingIfNeeded: Int(rgb.green))
+        let blue = UInt8(truncatingIfNeeded: Int(rgb.blue))
+        self.init(red: red, green: green, blue: blue)
     }
     
     public func findClosestMatch( palette: [RGBAPixel]) -> RGBAPixel {

@@ -12,6 +12,19 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     
+    @IBAction func openTouched(_ sender: NSMenuItem) {
+        let openPanel = NSOpenPanel()
+        
+        openPanel.begin { result in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                if let imageURL = openPanel.urls.first {
+                    let image = NSImage(byReferencing: imageURL)
+                    EditableImages.shared.setImage(image)
+                }
+            }
+        }
+    }
+    
     @IBAction func saveTouched(_ sender: NSMenuItem) {
 
         // the panel is automatically displayed in the user's language if your project is localized
