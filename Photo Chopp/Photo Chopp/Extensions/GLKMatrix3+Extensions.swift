@@ -22,3 +22,35 @@ extension GLKMatrix3 {
         
     }
 }
+
+extension GLKMatrix3 {
+    
+    static let gaussian = GLKMatrix3(m: (0.0625,0.125,0.0625,
+                                         0.125,0.25,0.125,
+                                         0.0625,0.125,0.0625))
+    
+    static let laplacian = GLKMatrix3(m: (0,-1,0,
+                                          -1,4,-1,
+                                          0,-1,0))
+    
+    static let passaAltasGenerica = GLKMatrix3(m: (-1,-1,-1,
+                                                   -1,8,-1,
+                                                   -1,-1,-1))
+    
+    static let prewittHx = GLKMatrix3(m: (-1,0,1,
+                                          -1,0,1,
+                                          -1,0,1))
+    
+    static let prewittHyHx = GLKMatrix3(m: (-1,-1,-1,
+                                            0,0,0,
+                                            1,1,1))
+    
+    static let sobelHx = GLKMatrix3(m: (-1,0,1,
+                                        -2,0,2,
+                                        -1,0,1))
+    
+    static let sobelHy = GLKMatrix3(m: (-1,-2,-1,
+                                        0,0,0,
+                                        1,2,1))
+    
+}

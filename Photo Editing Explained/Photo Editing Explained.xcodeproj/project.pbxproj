@@ -22,9 +22,7 @@
 		EE9EABEE21595242004DB243 /* GLKMatrix3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9EABED21595242004DB243 /* GLKMatrix3+Extensions.swift */; };
 		EEC93ADC2160139200B318A8 /* HistogramOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADB2160139200B318A8 /* HistogramOperation.swift */; };
 		EEC93ADE216015BC00B318A8 /* Histogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADD216015BC00B318A8 /* Histogram.swift */; };
-		EEC93AE0216130B500B318A8 /* RGBFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93ADF216130B500B318A8 /* RGBFunctions.swift */; };
 		EEC93AE2216131E100B318A8 /* LABPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93AE1216131E100B318A8 /* LABPixel.swift */; };
-		EEC93AE621615C0A00B318A8 /* RGBLABFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */; };
 		EEC949D6215821B5004B694C /* NSImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC949D5215821B5004B694C /* NSImageView+Extensions.swift */; };
 		EEE3D838215837AB0097414E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9A323D215837100027E6D6 /* Charts.framework */; };
 		EEE3D83C2158424E0097414E /* HistogramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3D83B2158424E0097414E /* HistogramViewController.swift */; };
@@ -63,9 +61,7 @@
 		EE9EABED21595242004DB243 /* GLKMatrix3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLKMatrix3+Extensions.swift"; sourceTree = "<group>"; };
 		EEC93ADB2160139200B318A8 /* HistogramOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramOperation.swift; sourceTree = "<group>"; };
 		EEC93ADD216015BC00B318A8 /* Histogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histogram.swift; sourceTree = "<group>"; };
-		EEC93ADF216130B500B318A8 /* RGBFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBFunctions.swift; sourceTree = "<group>"; };
 		EEC93AE1216131E100B318A8 /* LABPixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LABPixel.swift; sourceTree = "<group>"; };
-		EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLABFunctions.swift; sourceTree = "<group>"; };
 		EEC949D5215821B5004B694C /* NSImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+Extensions.swift"; sourceTree = "<group>"; };
 		EEE3D83B2158424E0097414E /* HistogramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramViewController.swift; sourceTree = "<group>"; };
 		EEE3D83E21584DD40097414E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -174,8 +170,6 @@
 				EE3F2D0F214F21BD005A1099 /* EditableImages.swift */,
 				EEC93ADB2160139200B318A8 /* HistogramOperation.swift */,
 				EEC93ADD216015BC00B318A8 /* Histogram.swift */,
-				EEC93ADF216130B500B318A8 /* RGBFunctions.swift */,
-				EEC93AE521615C0A00B318A8 /* RGBLABFunctions.swift */,
 			);
 			name = Model;
 			path = "../../Photo Chopp/Photo Chopp/Model";
@@ -314,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE3F2D0D214F0E4E005A1099 /* Filter.swift in Sources */,
-				EEC93AE0216130B500B318A8 /* RGBFunctions.swift in Sources */,
 				EEC93AE2216131E100B318A8 /* LABPixel.swift in Sources */,
 				EEE3D83C2158424E0097414E /* HistogramViewController.swift in Sources */,
 				EE3F2D10214F21BD005A1099 /* EditableImages.swift in Sources */,
@@ -322,7 +315,6 @@
 				EE3F2D0C214F0E4E005A1099 /* RGBAPixel.swift in Sources */,
 				EE3F2CE3214F09BF005A1099 /* ViewController.swift in Sources */,
 				EEC93ADE216015BC00B318A8 /* Histogram.swift in Sources */,
-				EEC93AE621615C0A00B318A8 /* RGBLABFunctions.swift in Sources */,
 				EEC949D6215821B5004B694C /* NSImageView+Extensions.swift in Sources */,
 				EEE3D83F21584DD40097414E /* Array+Extensions.swift in Sources */,
 				EE3F2D09214F0E4E005A1099 /* NSColor+Extensions.swift in Sources */,

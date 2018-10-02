@@ -91,4 +91,22 @@ public struct RGBAPixel {
              + abs(Int(self.green) - Int(otherPixel.green))
              + abs(Int(self.blue) - Int(otherPixel.blue))
     }
+    
+    static func getAverage(_ pixels: [RGBAPixel]) -> RGBAPixel {
+        
+        let redAverage = pixels.reduce(into: 0) { (res, pixel) in
+            res = res+(Double(Int(pixel.red))/Double(pixels.count))
+        }
+    
+        let greenAverage = pixels.reduce(into: 0) { (res, pixel) in
+            res = res+(Double(Int(pixel.green))/Double(pixels.count))
+        }
+    
+        let blueAverage = pixels.reduce(into: 0) { (res, pixel) in
+            res = res+(Double(Int(pixel.blue))/Double(pixels.count))
+        }
+    
+        return RGBAPixel(red: UInt8(truncatingIfNeeded: Int(redAverage)), green: UInt8(truncatingIfNeeded: Int(greenAverage)), blue: UInt8(truncatingIfNeeded: Int(blueAverage)))        
+    }
+    
 }

@@ -182,15 +182,6 @@ class BrightnessFilter: Filter {
     }
 }
 
-class GaussianFilter: Filter {
-    var kernel = GLKMatrix3(m: (0.0625,0.125,0.0625,0.125,0.25,0.125,0.0625,0.125,0.0625))
-    
-    func apply(input: Image) -> Image {
-        
-        return input.applyConvolution(kernel: kernel)
-    }
-}
-
 class ConstrastFilter: Filter {
     var scale: Double
     
@@ -278,3 +269,106 @@ class HistogramMatchMonoFilter: Filter {
         return newImage
     }
 }
+
+class ZoomOutFilter: Filter {
+    
+    let sx: Double
+    let sy: Double
+    
+    init(sx: Double, sy: Double) {
+        self.sx = sx
+        self.sy = sy
+    }
+    
+    func apply(input: Image) -> Image {
+        let newImage = input.zoomedOut(sx: sx, sy: sy)
+        return newImage
+    }
+}
+
+class ZoomInFilter: Filter {
+    
+    func apply(input: Image) -> Image {
+        let newImage = input.zoomedIn2x2()
+        return newImage
+    }
+}
+
+class Rotate90Filter: Filter {
+    
+    private var isClockwise: Bool
+    
+    init(isClockwise: Bool = true) {
+        self.isClockwise = isClockwise
+    }
+    
+    func apply(input: Image) -> Image {
+        if isClockwise {
+            return rotate90Clockwise(input: input)
+        } else {
+            return rotate90Anticlockwise(input: input)
+        }
+    }
+    
+    private func rotate90Clockwise(input: Image) -> Image {
+        let newImage = Image(width: input.height, height: input.width)
+        var newColumn = 0
+        var newRow = newImage.height-1
+        
+        for oldColRev in 0 ... input.width-1 {
+            let oldColumn = input.width-1 - oldColRev
+            
+            newColumn = newImage.width-1
+            for oldRow in 0 ..< input.height {
+                newImage.setPixel(input.getPixel(x: oldColumn, y: oldRow), x: newColumn, y: newRow)
+                
+                newColumn -= 1
+            }
+            
+            newRow -= 1
+        }
+        
+        return newImage
+    }
+
+    private func rotate90Anticlockwise(input: Image) -> Image {
+        let newImage = Image(width: input.height, height: input.width)
+        var newColumn = 0
+        var newRow = 0
+        
+        for oldColRev in 0 ... input.width-1 {
+            let oldColumn = input.width-1 - oldColRev
+            
+            newColumn = 0
+            for oldRow in 0 ..< input.height {
+                newImage.setPixel(input.getPixel(x: oldColumn, y: oldRow), x: newColumn, y: newRow)
+                
+                newColumn += 1
+            }
+            
+            newRow += 1
+        }
+        
+        return newImage
+    }
+}
+
+class ConvolutionFilter: Filter {
+    var kernel: GLKMatrix3
+    var summingValue: Float
+    
+    init(kernel: GLKMatrix3, summingValue: Float = 0.0) {
+        self.kernel = kernel
+        self.summingValue = summingValue
+    }
+    
+    func apply(input: Image) -> Image {
+        if input.isGreyScale {
+            return input.applyConvolution(kernel: kernel, summingValue: summingValue)
+        }
+        
+        return input.apply(GreyScaleFilter()).applyConvolution(kernel: kernel, summingValue: summingValue)
+    }
+}
+
+

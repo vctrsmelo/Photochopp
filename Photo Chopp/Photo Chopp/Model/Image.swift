@@ -9,6 +9,11 @@ enum RGBChannel {
     case greyscale
 }
 
+enum ConvolutionType {
+    case round
+    case sum127
+}
+
 class Image {
     
     let pixels: UnsafeMutableBufferPointer<RGBAPixel>
@@ -109,7 +114,7 @@ class Image {
         return filter.apply(input: self)
     }
     
-    func applyConvolution(kernel matrix: GLKMatrix3) -> Image {
+    func applyConvolution(kernel matrix: GLKMatrix3, summingValue: Float) -> Image {
         let newImage = Image(width: self.width, height: self.height)
         
         for y in 1 ..< newImage.height-1 {
@@ -117,10 +122,10 @@ class Image {
                 
                 let imageMatrix = getMatrix3(x,y)
                 
-                let rawRed = GLKMatrix3.conv(matrix, imageMatrix.red)
-                let rawGreen = GLKMatrix3.conv(matrix, imageMatrix.green)
-                let rawBlue = GLKMatrix3.conv(matrix, imageMatrix.blue)
-
+                var rawRed = GLKMatrix3.conv(matrix, imageMatrix.red) + summingValue
+                var rawGreen = GLKMatrix3.conv(matrix, imageMatrix.green) + summingValue
+                var rawBlue = GLKMatrix3.conv(matrix, imageMatrix.blue) + summingValue
+                
                 let newPixelRed: UInt8 = {
                     if (0 ... 255).contains(rawRed) {
                         return UInt8(rawRed)
@@ -291,5 +296,121 @@ class Image {
             }
         }
         return labPixels
+    }
+    
+    public func zoomedOut(sx: Double, sy: Double) -> Image {
+        let newImage = Image(width: Int(Double(width)/sx), height: Int(Double(height)/sy))
+     
+        var rectangle = PixelsRectangle(minX: 0, maxX: Int(sx)-1, minY: 0, maxY: Int(sy)-1)
+        
+        let movedXIncreased: (_ rectangle: PixelsRectangle) -> PixelsRectangle = { rectangle in
+            
+            let minX = rectangle.maxX+1
+            let minY = rectangle.minY
+            let maxX = rectangle.maxX+(rectangle.maxX-rectangle.minX)+1
+            let maxY = rectangle.maxY
+            
+            return PixelsRectangle(minX: minX, maxX: maxX, minY: minY, maxY: maxY)
+        }
+        
+        let movedYIncreased: (_ rectangle: PixelsRectangle) -> PixelsRectangle = { rectangle in
+            
+            let minX = rectangle.minX
+            let minY = rectangle.maxY+1
+            let maxX = rectangle.maxX
+            let maxY = rectangle.maxY+(rectangle.maxY-rectangle.minY)+1
+            
+            return PixelsRectangle(minX: minX, maxX: maxX, minY: minY, maxY: maxY)
+        }
+        
+        for x in 0 ..< newImage.width {
+            for y in 0 ..< newImage.height {
+                newImage.setPixel(getAveragePixel(rectangle: rectangle), x: x, y: y)
+                rectangle = movedYIncreased(rectangle)
+            }
+            rectangle = movedXIncreased(rectangle)
+            let height = rectangle.height
+            rectangle.minY = 0
+            rectangle.maxY = height
+        }
+        
+        return newImage
+    }
+    
+    struct PixelsRectangle {
+        var minX: Int
+        var maxX: Int
+        var minY: Int
+        var maxY: Int
+        
+        var height: Int {
+            return maxY - minY
+        }
+        
+        var width: Int {
+            return maxX - minX
+        }
+    }
+    
+    private func getAveragePixel(rectangle: PixelsRectangle) -> RGBAPixel {
+        
+        let minX = (rectangle.minX >= width) ? width-1 : rectangle.minX
+        let minY = (rectangle.minY >= height) ? height-1 : rectangle.minY
+        let maxX = (rectangle.maxX >= width) ? width-1 : rectangle.maxX
+        let maxY = (rectangle.maxY >= height) ? height-1 : rectangle.maxY
+        
+        var pixels = [RGBAPixel]()
+        for x in minX ... maxX {
+            for y in minY ... maxY {
+                pixels.append(getPixel(x: x, y: y))
+            }
+        }
+        
+        return RGBAPixel.getAverage(pixels)
+    }
+    
+    func zoomedIn2x2() -> Image {
+        let newImage = Image(width: width*2, height: height*2)
+
+        
+        for x in 0 ..< width {
+            for y in 0 ..< height {
+                newImage.setPixel(getPixel(x: x, y: y), x: x*2, y: y*2)
+            }
+        }
+        
+        //preenche novos pixels em cada linha
+        for y in 0 ..< newImage.height where y % 2 == 0 {
+            for x in 1 ..< newImage.width-1 where x % 2 != 0 {
+                let left = newImage.getPixel(x: x-1, y: y)
+                let right = newImage.getPixel(x: x+1, y: y)
+
+                newImage.setPixel(RGBAPixel.getAverage([left,right]), x: x, y: y)
+            }
+        }
+        
+        //preenche novos pixels em cada coluna (exceto corners)
+        for y in 1 ..< newImage.height-1 where y % 2 != 0 {
+            for x in 0 ..< newImage.width-1 where x % 2 == 0 {
+                let top = newImage.getPixel(x: x, y: y-1)
+                let bottom = newImage.getPixel(x: x, y: y+1)
+                
+                newImage.setPixel(RGBAPixel.getAverage([top,bottom]), x: x, y: y)
+            }
+        }
+        
+        //preenche corners
+        for y in 1 ..< newImage.height-1 where y % 2 != 0 {
+            for x in 0 ..< newImage.width-1 where x % 2 != 0 {
+                let topLeft = newImage.getPixel(x: x-1, y: y-1)
+                let topRight = newImage.getPixel(x: x+1, y: y-1)
+                let bottomLeft = newImage.getPixel(x: x-1, y: y+1)
+                let bottomRight = newImage.getPixel(x: x+1, y: y+1)
+                
+                newImage.setPixel(RGBAPixel.getAverage([bottomLeft, bottomRight, topLeft, topRight]), x: x, y: y)
+            }
+        }
+        
+        return newImage
     }
 }
